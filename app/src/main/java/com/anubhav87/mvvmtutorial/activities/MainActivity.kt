@@ -22,6 +22,7 @@ class MainActivity : AppCompatActivity() {
     private val noteViewModel: NoteViewModel by inject()
     private val adapter: NoteAdapter by inject()
 
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -87,5 +88,7 @@ class MainActivity : AppCompatActivity() {
 
     companion object{
         private const val ADD_NOTE_REQUEST = 1
+        const val UPDATE_NOTE_ACTIVITY_REQUEST_CODE = 2
+
     }
 }

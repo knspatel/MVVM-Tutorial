@@ -15,18 +15,32 @@ class NoteRepository(private val noteDao: NoteDao) {
         ).execute(note)
     }
 
+    fun update(note: Note) {
+
+        //noteDao.updateNote()
+        UpdateNoteAsyncTask(
+            noteDao
+        ).execute(note)
+    }
+
     fun deleteAllNotes() {
         DeleteAllNotesAsyncTask(
             noteDao
         ).execute()
     }
 
+
     fun getAllNotes(): LiveData<List<Note>> {
         return allNotes
     }
 
-    private class InsertNoteAsyncTask(val noteDao: NoteDao) : AsyncTask<Note, Unit, Unit>() {
+    private class UpdateNoteAsyncTask(val noteDao: NoteDao) : AsyncTask<Note, Unit, Unit>() {
 
+        override fun doInBackground(vararg note: Note?) {
+            note.get(0)?.id?.let { noteDao.updateNote(it, note.get(0)!!.title, note.get(0)!!.description) }
+        }
+    }
+    private class InsertNoteAsyncTask(val noteDao: NoteDao) : AsyncTask<Note, Unit, Unit>() {
         override fun doInBackground(vararg note: Note?) {
             noteDao.insert(note[0]!!)
         }
@@ -34,7 +48,6 @@ class NoteRepository(private val noteDao: NoteDao) {
 
 
     private class DeleteAllNotesAsyncTask(val noteDao: NoteDao) : AsyncTask<Unit, Unit, Unit>() {
-
         override fun doInBackground(vararg p0: Unit?) {
             noteDao.deleteAllNotes()
         }

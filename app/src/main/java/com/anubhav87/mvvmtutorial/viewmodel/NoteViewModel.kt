@@ -21,4 +21,8 @@ class NoteViewModel(private var repository: NoteRepository) : ViewModel() {
     fun getAllNotes(): LiveData<List<Note>> {
         return allNotes
     }
+
+    fun updateNotes(note: Note) {
+        repository.update(note)
+    }
 }
