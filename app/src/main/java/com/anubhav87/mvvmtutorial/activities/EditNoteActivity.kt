@@ -1,12 +1,14 @@
 package com.anubhav87.mvvmtutorial.activities
 
-import android.arch.lifecycle.LiveData
-import android.arch.lifecycle.Observer
+
 import android.os.Bundle
-import android.support.v7.app.AppCompatActivity
+
 import android.util.Log
 import android.view.View
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.Observer
 import com.anubhav87.mvvmtutorial.R
 import com.anubhav87.mvvmtutorial.db.entity.Note
 import com.anubhav87.mvvmtutorial.viewmodel.EditNoteViewModel

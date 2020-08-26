@@ -1,7 +1,7 @@
 package com.anubhav87.mvvmtutorial.viewmodel
 
-import android.arch.lifecycle.LiveData
-import android.arch.lifecycle.ViewModel
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.ViewModel
 import com.anubhav87.mvvmtutorial.db.entity.Note
 import com.anubhav87.mvvmtutorial.repository.NoteRepository
 

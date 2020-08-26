@@ -2,7 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:tools="http://schemas.android.com/tools"
         package="com.anubhav87.mvvmtutorial">
-
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <application
             android:allowBackup="true"
             android:icon="@mipmap/ic_launcher"
@@ -11,7 +12,10 @@
             android:supportsRtl="true"
             android:theme="@style/AppTheme"
             android:name=".CoreApplication"
-            tools:ignore="GoogleAppIndexingWarning">
+            tools:ignore="GoogleAppIndexingWarning"
+            tools:replace="android:appComponentFactory"
+            android:appComponentFactory="@string/app_name">
+
         <activity android:name=".activities.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
@@ -19,11 +23,16 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
+
         <activity android:name=".activities.AddNoteActivity">
         </activity>
 
         <activity android:name=".activities.EditNoteActivity">
         </activity>
+
+        <activity android:name=".activities.ArticleActivity">
+        </activity>
+
     </application>
 
 </manifest>

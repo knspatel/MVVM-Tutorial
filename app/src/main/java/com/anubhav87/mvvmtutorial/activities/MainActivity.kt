@@ -1,14 +1,14 @@
 package com.anubhav87.mvvmtutorial.activities
 
 import android.app.Activity
-import android.arch.lifecycle.Observer
 import android.content.Intent
 import android.os.Bundle
-import android.support.v7.app.AppCompatActivity
-import android.support.v7.widget.LinearLayoutManager
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.Observer
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.anubhav87.mvvmtutorial.R
 import com.anubhav87.mvvmtutorial.adapter.NoteAdapter
 import com.anubhav87.mvvmtutorial.db.entity.Note
@@ -62,6 +62,12 @@ class MainActivity : AppCompatActivity() {
             R.id.delete_all_notes -> {
                 noteViewModel.deleteAllNotes()
                 Toast.makeText(this, "All notes deleted!", Toast.LENGTH_SHORT).show()
+                true
+            }
+            R.id.api_calls -> {
+               // noteViewModel.deleteAllNotes()
+                startActivity(Intent(this, ArticleActivity::class.java))
+                Toast.makeText(this, "API calls!", Toast.LENGTH_SHORT).show()
                 true
             }
             else -> {

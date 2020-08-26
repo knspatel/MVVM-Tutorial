@@ -1,7 +1,8 @@
 package com.anubhav87.mvvmtutorial.repository
 
-import android.arch.lifecycle.LiveData
+//import android.arch.lifecycle.LiveData
 import android.os.AsyncTask
+import androidx.lifecycle.LiveData
 import com.anubhav87.mvvmtutorial.db.dao.NoteDao
 import com.anubhav87.mvvmtutorial.db.entity.Note
 
