@@ -29,7 +29,8 @@ class ArticleRepository(private val articleDao: ArticleDao) {
                 //Log.e(TAG, "${response!!.body()}")
                 usersSuccessLiveData.postValue(response.body())
                 var article = response.body()!!.articles
-                Log.e(TAG, "getMovieArticles: "+article )
+               // Log.e(TAG, "getMovieArticles: "+article )
+
 
                 val executor: Executor = Executors.newSingleThreadExecutor()
                 executor.execute(Runnable {

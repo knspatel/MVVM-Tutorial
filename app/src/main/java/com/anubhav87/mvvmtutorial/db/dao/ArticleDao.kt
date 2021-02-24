@@ -19,8 +19,6 @@ interface ArticleDao {
 //    @Query("SELECT * FROM characters WHERE id = :id")
 //    fun getCharacter(id: Int): LiveData<Character>
 
-
-
 //    @Insert(onConflict = OnConflictStrategy.REPLACE)
 //    suspend fun insert(character: Character)
 

@@ -12,12 +12,6 @@ data class Article(
 
     @Expose
     var title: String = "",
-// private String title;
-//private String author;
-//private String urlToImage;
-//private String publishedAt;
-//private String description;
-
 
     @Expose
     var author: String = "",
@@ -26,5 +20,9 @@ data class Article(
     @Expose
     var publishedAt: String = "",
     @Expose
-    var description: String = ""
+    var description: String = "",
+
+
+    var status : Int = 0
+
 )

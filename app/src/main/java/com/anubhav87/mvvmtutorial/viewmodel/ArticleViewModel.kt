@@ -16,14 +16,16 @@ class ArticleViewModel(private var repository: ArticleRepository) : ViewModel() 
     val usersSuccessLiveData = repository.usersSuccessLiveData
     val usersFailureLiveData = repository.usersFailureLiveData
 
+
     fun initRetrofit() {
         repository!!.initRetrofit()
     }
 
-    fun getArticles() {
+    fun getArticles()  {
         initRetrofit()
         viewModelScope.launch {
-             repository!!.getMovieArticles(ARTICLE_QUERY, API_KEY)!!
+             repository!!.getMovieArticles(ARTICLE_QUERY, API_KEY)
+
         }
     }
 
